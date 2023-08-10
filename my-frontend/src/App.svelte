@@ -3,6 +3,8 @@
     import Header from './Header.svelte';
     import SideMenu from './SideMenu.svelte';
     import MainContent from './MainContent.svelte';
+    import AddUser from './AddUser.svelte';
+    import Users from './Users.svelte';
   
     let isMenuOpen = false;
   </script>
@@ -40,6 +42,8 @@
     </aside> -->
   
     <main class="content">
+        <AddUser />
+        <Users />
       <MainContent />
     </main>
   </div>

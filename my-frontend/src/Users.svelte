@@ -7,8 +7,8 @@
     let error = null;
   
     // Variables for the GraphQL query
-    let page = 10;  // Number of users to retrieve
-    let pageSize = 0;  // Start index for retrieval
+    let page = 2;  // Number of users to retrieve
+    let pageSize = 20;  // Start index for retrieval
   
     const fetchUsers = async () => {
       const GET_USERS_QUERY = `
@@ -40,7 +40,7 @@
   
       try {
         const variables = { page, pageSize };
-        const data = await request('YOUR_BACKEND_GRAPHQL_ENDPOINT', GET_USERS_QUERY, variables);
+        const data = await request('https://rnd-ns2-tech-challenge-next-be.vercel.app/api/graphql', GET_USERS_QUERY, variables);
         console.log(users)
         users = data.users;
       } catch (err) {
@@ -50,3 +50,15 @@
   
     onMount(fetchUsers);
   </script>
+
+        {#if error}
+        <p>Error: {error}</p>
+        {:else}
+        <ul>
+        {#each users as user}
+            <li>
+                {user.name} 
+            </li>
+        {/each}
+        </ul>
+        {/if}
