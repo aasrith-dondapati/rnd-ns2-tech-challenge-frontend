@@ -2,7 +2,6 @@
     import { request } from 'graphql-request';  // Assuming you are using the graphql-request library
   
     let username = 'New User';
-    let email = '';
     let feedback = '';
   
     const createUser = async () => {
