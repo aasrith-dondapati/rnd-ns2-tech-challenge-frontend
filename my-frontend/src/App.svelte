@@ -35,13 +35,8 @@
   </style>
   
   <div class="app">
-    <!-- <Header on:toggleMenu={() => isMenuOpen = !isMenuOpen} /> -->
-  
-    <!-- <aside class="sidebar {isMenuOpen ? '' : 'collapsed'}">
-      <SideMenu />
-    </aside> -->
-  
     <main class="content">
+        <SideMenu />
         <AddUser />
         <Users />
       <MainContent />
